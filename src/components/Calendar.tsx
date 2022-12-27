@@ -7,6 +7,7 @@ import {
   addHour,
   deleteHour,
   deleteAllHours,
+  setDayToSchedule,
 } from "../features/calendar/calendarSlice";
 import ModeSwitch from "../assets/images/ModeSwitcher";
 import DelBtn from "../assets/images/DelBtn";
@@ -18,20 +19,13 @@ type CalendarProps = {
   toggleTheme: any;
 };
 
-let timeToSchedules = {
-  "10:00": false,
-  "12:00": false,
-  "14:00": false,
-  "16:00": false,
-};
-
 const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
-  const { calendar, choosenHours } = useAppSelector(state);
+  const { calendar, choosenHours, dayToSchedule } = useAppSelector(state);
   const [choosenDay, setChoosenDay] = useState("");
   const [choosenDayToChange, setChoosenDayToChange] = useState<IDay>();
-  const [schedule, setSchedule] = useState<any>(timeToSchedules);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [timeToDelete, setTimeToDelete] = useState("");
+  const [dayToDelete, setDayToDelete] = useState<IDay>();
 
   const week = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
@@ -49,16 +43,11 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
     }
   };
 
-  const clickOnDate = (
-    day: string,
-    timeToSchedules: ITimeToSchedule,
-    dayInfo: IDay
-  ) => {
-    console.log("choosenHours", choosenHours);
-
+  const clickOnDate = (day: string, dayInfo: IDay) => {
     setChoosenDay(day);
     dispatch(deleteAllHours());
-    setSchedule(timeToSchedules);
+    dispatch(setDayToSchedule(dayInfo));
+    setDayToDelete(dayInfo);
     setChoosenDayToChange(dayInfo);
   };
 
@@ -69,9 +58,8 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
   const handleConfirm = (result: string) => {
     if (result) {
       dispatch(deleteTime({ timeToDelete, choosenDayToChange }));
+      dispatch(setDayToSchedule(dayToDelete));
       dispatch(deleteHour(timeToDelete));
-      console.log("choosenHours", choosenHours);
-      console.log("calendar", calendar);
     }
 
     toggleModalHandler();
@@ -109,7 +97,7 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
             return (
               <Number
                 key={item.day}
-                onClick={() => clickOnDate(day, item.timeToSchedules, item)}
+                onClick={() => clickOnDate(day, item)}
                 style={
                   choosenDay === day
                     ? { background: "orange", color: "#FFFFFF" }
@@ -124,7 +112,7 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
       </CalendarBox>
 
       <TimeBox>
-        {Object.keys(schedule).map((item) => {
+        {Object.keys(dayToSchedule).map((item) => {
           let isChoosenHoursContainsTime = choosenHours.some((i) => i === item);
 
           return (
@@ -132,14 +120,16 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
               key={item}
               onClick={() => handleAddTime(item)}
               style={
-                schedule[item] || isChoosenHoursContainsTime
+                dayToSchedule[item as keyof ITimeToSchedule] ||
+                isChoosenHoursContainsTime
                   ? { background: "#70C05B", color: "#FFFFFF" }
                   : {}
               }
             >
               {item}
 
-              {(schedule[item] || isChoosenHoursContainsTime) && (
+              {(dayToSchedule[item as keyof ITimeToSchedule] ||
+                isChoosenHoursContainsTime) && (
                 <SpamForDeleteBtn onClick={(e) => handleDelete(item, e)}>
                   <DelBtn></DelBtn>
                 </SpamForDeleteBtn>

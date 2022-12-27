@@ -1,6 +1,7 @@
 export interface ICounterState {
   calendar: ICalendar[];
   choosenHours: string[];
+  dayToSchedule: ITimeToSchedule;
 }
 
 export interface IDay {

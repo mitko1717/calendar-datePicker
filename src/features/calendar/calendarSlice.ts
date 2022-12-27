@@ -1,11 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { CALENDAR } from "../../assets/calendar";
 import { ICounterState } from "./Interfaces";
 
+const calendar =
+  typeof window !== "undefined" && localStorage.getItem("calendar")
+    ? JSON.parse(localStorage.getItem("calendar") || "")
+    : [];
+
 const initialState: ICounterState = {
-  calendar: CALENDAR,
+  calendar: calendar.length > 0 ? calendar : CALENDAR,
   choosenHours: [],
+  dayToSchedule: {
+    "10:00": false,
+    "12:00": false,
+    "14:00": false,
+    "16:00": false,
+  },
 };
 
 export const calendarSlice = createSlice({
@@ -22,6 +33,8 @@ export const calendarSlice = createSlice({
       choosenHours.forEach((hour: string) => {
         newObj.timeToSchedules[hour] = true;
       });
+
+      localStorage.setItem("calendar", JSON.stringify(state.calendar));
     },
     deleteTime: (state, action) => {
       const { timeToDelete, choosenDayToChange } = action.payload;
@@ -32,6 +45,8 @@ export const calendarSlice = createSlice({
 
       let newObj = { ...existingItem };
       newObj.timeToSchedules[timeToDelete] = false;
+
+      localStorage.setItem("calendar", JSON.stringify(state.calendar));
     },
     addHour: (state, action) => {
       state.choosenHours.push(action.payload);
@@ -44,11 +59,24 @@ export const calendarSlice = createSlice({
     deleteAllHours: (state) => {
       state.choosenHours = [];
     },
+    setDayToSchedule: (state, action) => {
+      const existingItem = state.calendar[0].days.find(
+        (item) => item.index === action.payload.index
+      );
+
+      state.dayToSchedule = existingItem?.timeToSchedules;
+    },
   },
 });
 
-export const { addTime, deleteTime, addHour, deleteHour, deleteAllHours } =
-  calendarSlice.actions;
+export const {
+  addTime,
+  deleteTime,
+  addHour,
+  deleteHour,
+  deleteAllHours,
+  setDayToSchedule,
+} = calendarSlice.actions;
 export const state = (state: RootState) => state.calendar;
 
 export default calendarSlice.reducer;
