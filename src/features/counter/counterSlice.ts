@@ -1,47 +1,47 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
+import { CALENDAR, timeToSchedule } from "../../assets/calendar";
 
-export interface CounterState {
-  value: number;
-  status: 'idle' | 'loading' | 'failed';
+export interface ICounterState {
+  calendar: ICalendar[];
+  timeToSchedule: string[];
 }
 
-const initialState: CounterState = {
-  value: 0,
-  status: 'idle',
+export interface ITimeToSchedule {
+  "10:00": boolean;
+  "12:00": boolean;
+  "14:00": boolean;
+  "16:00": boolean;
+}
+
+export interface IDay {
+  day: number;
+  timeToSchedules: ITimeToSchedule;
+  index: number;
+}
+
+export interface ICalendar {
+  month: string;
+  days: IDay[];
+  index: number;
+}
+
+const initialState: ICounterState = {
+  calendar: CALENDAR,
+  timeToSchedule,
 };
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const calendarSlice = createSlice({
+  name: "calendar",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
-    },
+    increment: (state) => {},
   },
 
-  extraReducers: (builder) => {
-    // builder
-    //   .addCase(incrementAsync.pending, (state) => {
-    //     state.status = 'loading';
-    //   })
-    //   .addCase(incrementAsync.fulfilled, (state, action) => {
-    //     state.status = 'idle';
-    //     state.value += action.payload;
-    //   })
-    //   .addCase(incrementAsync.rejected, (state) => {
-    //     state.status = 'failed';
-    //   });
-  },
+  extraReducers: (builder) => {},
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-export const selectCount = (state: RootState) => state.counter.value;
+export const { increment } = calendarSlice.actions;
+export const state = (state: RootState) => state.calendar;
 
-export default counterSlice.reducer;
+export default calendarSlice.reducer;

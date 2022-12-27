@@ -1,538 +1,167 @@
-export const CALENDAR = [
-    {
-        month: "January 2023",
-        days: [
-            {
-                day: 1, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 2, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 3, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 4, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 5, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 6, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 7, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 8, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 9, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 10, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 11, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 12, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 13, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 14, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 15, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 16, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 17, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 18, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 19, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 20, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 21, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 22, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 23, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 24, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 25, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 26, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 27, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 28, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 29, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-            {
-                day: 30, 
-                timeToSchedule: {
-                    "10:00": false,
-                    "12:00": false,
-                    "14:00": false,
-                    "16:00": false,
-                },
-            },
-        ],
-        index: 1,
-    },
-    // {
-    //     month: "January 2023",
-    //     days: [
-    //         {
-    //             day: 1, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 2, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 3, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 4, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 5, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 6, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 7, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 8, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 9, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 10, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 11, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 12, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 13, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 14, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 15, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 16, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 17, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 18, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 19, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 20, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 21, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 22, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 23, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 24, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 25, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 26, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 27, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //         {
-    //             day: 28, 
-    //             timeToSchedule: {
-    //                 "10:00": false,
-    //                 "12:00": false,
-    //                 "14:00": false,
-    //                 "16:00": false,
-    //             },
-    //         },
-    //     ],
-    //     index: 2,
-    // },
-]
+let timeToSchedules = {
+  "10:00": false,
+  "12:00": false,
+  "14:00": false,
+  "16:00": false,
+};
 
-export const timeToSchedule = ["10:00", "12:00", "14:00", "16:00",]
+export const CALENDAR = [
+  {
+    month: "January 2023",
+    days: [
+      {
+        day: 1,
+        timeToSchedules,
+        index: 1,
+      },
+      {
+        day: 2,
+        timeToSchedules,
+        index: 2,
+      },
+      {
+        day: 3,
+        timeToSchedules,
+        index: 3,
+      },
+      {
+        day: 4,
+        timeToSchedules,
+        index: 4,
+      },
+      {
+        day: 5,
+        timeToSchedules,
+        index: 5,
+      },
+      {
+        day: 6,
+        timeToSchedules,
+        index: 6,
+      },
+      {
+        day: 7,
+        timeToSchedules,
+        index: 7,
+      },
+      {
+        day: 8,
+        timeToSchedules,
+        index: 8,
+      },
+      {
+        day: 9,
+        timeToSchedules,
+        index: 9,
+      },
+      {
+        day: 10,
+        timeToSchedules,
+        index: 10,
+      },
+      {
+        day: 11,
+        timeToSchedules,
+        index: 11,
+      },
+      {
+        day: 12,
+        timeToSchedules,
+        index: 12,
+      },
+      {
+        day: 13,
+        timeToSchedules,
+        index: 13,
+      },
+      {
+        day: 14,
+        timeToSchedules,
+        index: 14,
+      },
+      {
+        day: 15,
+        timeToSchedules,
+        index: 15,
+      },
+      {
+        day: 16,
+        timeToSchedules,
+        index: 16,
+      },
+      {
+        day: 17,
+        timeToSchedules,
+        index: 17,
+      },
+      {
+        day: 18,
+        timeToSchedules,
+        index: 18,
+      },
+      {
+        day: 19,
+        timeToSchedules,
+        index: 19,
+      },
+      {
+        day: 20,
+        timeToSchedules,
+        index: 20,
+      },
+      {
+        day: 21,
+        timeToSchedules,
+        index: 21,
+      },
+      {
+        day: 22,
+        timeToSchedules,
+        index: 22,
+      },
+      {
+        day: 23,
+        timeToSchedules,
+        index: 23,
+      },
+      {
+        day: 24,
+        timeToSchedules,
+        index: 24,
+      },
+      {
+        day: 25,
+        timeToSchedules,
+        index: 25,
+      },
+      {
+        day: 26,
+        timeToSchedules,
+        index: 26,
+      },
+      {
+        day: 27,
+        timeToSchedules,
+        index: 27,
+      },
+      {
+        day: 28,
+        timeToSchedules,
+        index: 28,
+      },
+      {
+        day: 29,
+        timeToSchedules,
+        index: 29,
+      },
+      {
+        day: 30,
+        timeToSchedules,
+        index: 30,
+      },
+    ],
+    index: 1,
+  },
+];
+
+export const timeToSchedule = ["10:00", "12:00", "14:00", "16:00"];
