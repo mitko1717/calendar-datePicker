@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "./components/DarkMode";
 import { GlobalStyles } from "./components/GlobalStyle";
 import { lightTheme, darkTheme } from "./components/Themes";
+import "./index.css";
 
 const App = () => {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
