@@ -141,7 +141,7 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
 
       {choosenDay && choosenHours && (
         <Message>
-          {choosenDay} {calendar[0].month}
+          {choosenDay} {calendar[0].month} {" "}
           {choosenHours[choosenHours.length - 1]}
         </Message>
       )}
