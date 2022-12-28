@@ -13,6 +13,7 @@ import ModeSwitch from "../assets/images/ModeSwitcher";
 import DelBtn from "../assets/images/DelBtn";
 import ArrowLeft from "../assets/images/ArrowLeft";
 import ArrowRight from "../assets/images/ArrowRight";
+import Check from "../assets/images/Check";
 import Modal from "./ModalConfirm";
 import styled from "styled-components";
 import { IDay, ITimeToSchedule } from "../features/calendar/Interfaces";
@@ -153,12 +154,17 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
 
       {choosenDay && choosenHours && (
         <Message>
-          {choosenDay} {calendar[0].month} {" "}
+          {choosenDay} {calendar[0].month}{" "}
           {choosenHours[choosenHours.length - 1]}
         </Message>
       )}
 
-      <Button onClick={addTimeToDay}>Підтвердити</Button>
+      <Button onClick={addTimeToDay}>
+        <CheckBox>
+          <Check />
+        </CheckBox>
+        Підтвердити
+      </Button>
     </Container>
   );
 };
@@ -276,6 +282,7 @@ const Button = styled.button`
   box-sizing: border-box;
   margin-top: 1rem;
   font-size: 16px;
+  position: relative;
 `;
 
 const Message = styled.p`
@@ -306,20 +313,20 @@ const SwitchMode = styled.div`
   align-self: flex-end;
   cursor: pointer;
   margin-bottom: 1rem;
-`
+`;
 
 const DivMonthAndArrows = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin-bottom: 1rem;
-`
+`;
 
 const Arrows = styled.div`
   display: flex;
   width: 80px;
   justify-content: space-between;
-`
+`;
 const Left = styled.p`
   display: flex;
   justify-content: center;
@@ -328,10 +335,10 @@ const Left = styled.p`
   gap: 8px;
   width: 32px;
   height: 32px;
-  background: #F3F2F1 !important;
+  background: #f3f2f1 !important;
   border-radius: 4px;
   box-sizing: border-box;
-`
+`;
 const Right = styled.p`
   display: flex;
   justify-content: center;
@@ -340,8 +347,11 @@ const Right = styled.p`
   gap: 8px;
   width: 32px;
   height: 32px;
-  background: #F3F2F1 !important;
+  background: #f3f2f1 !important;
   border-radius: 4px;
   box-sizing: border-box;
-`
-
+`;
+const CheckBox = styled.span`
+  position: absolute;
+  left: 12px;
+`;
