@@ -11,6 +11,8 @@ import {
 } from "../features/calendar/calendarSlice";
 import ModeSwitch from "../assets/images/ModeSwitcher";
 import DelBtn from "../assets/images/DelBtn";
+import ArrowLeft from "../assets/images/ArrowLeft";
+import ArrowRight from "../assets/images/ArrowRight";
 import Modal from "./ModalConfirm";
 import styled from "styled-components";
 import { IDay, ITimeToSchedule } from "../features/calendar/Interfaces";
@@ -77,10 +79,20 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
     <Container>
       <Modal open={isOpenModal} handleConfirm={handleConfirm} />
 
-      <div onClick={toggleTheme}>
+      <SwitchMode onClick={toggleTheme}>
         <ModeSwitch />
-      </div>
-      <H_3>{calendar[0].month}</H_3>
+      </SwitchMode>
+      <DivMonthAndArrows>
+        <H_3>{calendar[0].month}</H_3>
+        <Arrows>
+          <Left>
+            <ArrowLeft />
+          </Left>
+          <Right>
+            <ArrowRight />
+          </Right>
+        </Arrows>
+      </DivMonthAndArrows>
       <CalendarBox>
         <DaysList>
           {week.map((item) => (
@@ -100,7 +112,7 @@ const Calendar: FC<CalendarProps> = ({ toggleTheme }) => {
                 onClick={() => clickOnDate(day, item)}
                 style={
                   choosenDay === day
-                    ? { background: "orange", color: "#FFFFFF" }
+                    ? { background: "#FF6633", color: "#FFFFFF" }
                     : {}
                 }
               >
@@ -214,9 +226,9 @@ const CalendarBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  gap: 24px;
+  gap: 10px;
   width: 326px;
-  height: 262px;
+  height: 252px;
 `;
 
 const TimeBox = styled.div`
@@ -263,11 +275,13 @@ const Button = styled.button`
   font-weight: 500;
   box-sizing: border-box;
   margin-top: 1rem;
+  font-size: 16px;
 `;
 
 const Message = styled.p`
   display: flex;
-  margin: 0 auto;
+  margin: 4px auto;
+  font-size: 18px;
 `;
 
 const SpamForDeleteBtn = styled.span`
@@ -280,4 +294,54 @@ const SpamForDeleteBtn = styled.span`
 
 const H_3 = styled.h3`
   margin: 1rem 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 `;
+
+const SwitchMode = styled.div`
+  display: flex;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+`
+
+const DivMonthAndArrows = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`
+
+const Arrows = styled.div`
+  display: flex;
+  width: 80px;
+  justify-content: space-between;
+`
+const Left = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  width: 32px;
+  height: 32px;
+  background: #F3F2F1 !important;
+  border-radius: 4px;
+  box-sizing: border-box;
+`
+const Right = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  width: 32px;
+  height: 32px;
+  background: #F3F2F1 !important;
+  border-radius: 4px;
+  box-sizing: border-box;
+`
+

@@ -7,7 +7,7 @@ let timeToSchedules = {
 
 export const CALENDAR = [
   {
-    month: "January 2023",
+    month: "Листопад 2023",
     days: [
       {
         day: 1,
